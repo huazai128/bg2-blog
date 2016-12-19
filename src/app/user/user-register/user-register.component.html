@@ -1,0 +1,72 @@
+<div class="container user-register-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">用户注册</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" [formGroup]="addUserForm" (ngSubmit)="addUser()">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">用户名：</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" formControlName="name" #name name="name" (keyup)="nameExist(name.value)" required placeholder="用户名">
+                    </div>
+                    <div *ngIf="name.errors && (name.dirty || name.touched)" class="col-sm-3 error text-danger">
+                        <div [hidden]="!name.errors.required">不能为空！</div>
+                        <div [hidden]="!name.errors.minlength">用户名过短！</div>
+                        <div [hidden]="!name.errors.maxlength">用户名过长！</div>
+                    </div>
+                    <div class="col-sm-3 error text-danger" [hidden]="!flag">用户名存在</div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="phone">手机号：</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="phone" formControlName="phone" name="phone" required placeholder="手机号">
+                    </div>
+                    <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="col-sm-3 error text-danger">
+                        <div [hidden]="!phone.errors.require">不能为空</div>
+                        <div [hidden]="!phone.errors.pattern">手机格式出错</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">常用的邮箱：</label>
+                    <div class="col-sm-7">
+                        <input type="email" class="form-control" #email formControlName="email" name="email" (change)="emailExist(email.value)" required placeholder="常用的邮箱">
+                    </div>
+                    <div *ngIf="email.errors && (email.dirty || email.touched)" class="col-sm-3 error text-danger">
+                        <div [hidden]="!email.errors.required">填写邮箱</div>
+                        <div [hidden]="!email.errors.pattern">Email的格式不对</div>
+                    </div>
+                    <div class="col-sm-3 error text-danger" [hidden]="!flag1">Email已被注册</div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">密码：</label>
+                    <div class="col-sm-7">
+                        <input type="password" class="form-control" formControlName="password" required name="password" placeholder="密码只能以字母开头">
+                    </div>
+                    <div class="col-sm-3 error text-danger" *ngIf="password.errors && (password.dirty || password.touched)">
+                        <div [hidden]="!password.errors.required">密码不能为空！</div>
+                        <div [hidden]="!password.errors.minLenght">密码太短！</div>
+                        <div [hidden]="!password.errors.maxLenght">密码太长！</div>
+                        <div [hidden]="!password.errors.pattern">只能以字母开头，数字、字母和下划线！</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">重复密码：</label>
+                    <div class="col-sm-7">
+                        <input type="password" class="form-control" formControlName="repassword" required name="repassword"  placeholder="重复密码">
+                    </div>
+                    <div *ngIf="repassword.errors && (repassword.dirty || repassword.touched)" class="col-sm-3 error text-danger">
+                        <div [hidden]="!repassword.errors.required">不能为空！</div>
+                    </div>
+                    <div class="col-sm-3 error text-danger" [hidden]="addUserForm.value.repassword == addUserForm.value.password">密码不一致！</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success" [disabled]="!addUserForm.valid">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-sm-3">
+            <div class="list-group">
+                <a routerLink="write" class="list-group-item">写作</a>
+                <a routerLink="posttable" class="list-group-item"><span class="badge">1024</span>文章管理</a>
+                <a routerLink="common" class="list-group-item"><span class="badge">1024</span>评论管理</a>
+                <a routerLink="profile" class="list-group-item">个人设置</a>
+            </div>
+            <app-user-info></app-user-info>
+        </div>
+    </div>
+</div>

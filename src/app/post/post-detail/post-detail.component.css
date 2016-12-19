@@ -1,0 +1,4 @@
+.post-detail-container i{display: inline-block;font-style: normal;padding-right: 8px;}
+.post-detail-container .post-title p{font-size: 12px;color: #808080;}
+.post-detail-container .post-content{text-indent: 2em;}
+.post-detail-container{padding-bottom: 15px;margin-bottom: 30px;border-bottom: 2px solid #e6e6e6;}

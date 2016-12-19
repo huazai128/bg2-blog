@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Î¢ÈíÑÅºÚ', Microsoft YaHei, 'ËÎÌå', Tahoma, Helvetica, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Î¢ÈíÑÅºÚ', Microsoft YaHei, 'ËÎÌå', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}

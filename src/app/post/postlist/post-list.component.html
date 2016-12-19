@@ -1,0 +1,62 @@
+<div class="post-list-container">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索" [(ngModel)]="searchText" (change)="searchChange($event)" id="searchText" name="searchText">
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        搜索
+                    </button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="post-item-container">
+                <ul>
+                    <li>
+                        <h4><a [routerLink]="['detail/1']">angular1.3是因为什么特性导致不支持ie8的？</a></h4>
+                        <p>
+                            keke
+                            &nbsp;&nbsp;&nbsp;&nbsp;2016-11-21 10:44
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;1000
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;1000
+                        </p>
+                    </li>
+                    <li>
+                        <h4><a [routerLink]="['detail/1']">angular1.3是因为什么特性导致不支持ie8的？</a></h4>
+                        <p>
+                            keke
+                            &nbsp;&nbsp;&nbsp;&nbsp;2016-11-21 10:44
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;1000
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;1000
+                        </p>
+                    </li>
+                    <li>
+                        <h4><a [routerLink]="['detail/1']">angular1.3是因为什么特性导致不支持ie8的？</a></h4>
+                        <p>
+                            keke
+                            &nbsp;&nbsp;&nbsp;&nbsp;2016-11-21 10:44
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;1000
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;1000
+                        </p>
+                    </li>
+                    <li>
+                        <h4><a [routerLink]="['detail/1']">angular1.3是因为什么特性导致不支持ie8的？</a></h4>
+                        <p>
+                            keke
+                            &nbsp;&nbsp;&nbsp;&nbsp;2016-11-21 10:44
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;1000
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;1000
+                        </p>
+                    </li>
+                </ul>
+                <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
+            </div>
+        </div>
+    </div>
+</div>

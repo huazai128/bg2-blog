@@ -1,0 +1,26 @@
+<div class="write-post-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>上传文章：</h3>
+            <form role="form" #form="ngForm" (ngSubmit)="writePost(write)">
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="write.title" name="title" placeholder="标题，2到32个字符" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="write.url" name="url" placeholder="原文URL，如果是转载请粘贴，最长1024个字符" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="post_editor" class="form-control" rows="20" [(ngModel)]="write.content" name="content" placeholder="内容，最少140字，最多2万字。图片每张最大500K，每篇文章最多50张图。" required></textarea>
+                    <iframe id="form_target" name="form_target" style="display: none"></iframe>
+                    <form id="file_upload_form" target="form_target" method="post" enctype="multipart/form-data" style="width: 0;height: 0;overflow: hidden;">
+                        <input type="file" id="img_input" name="images" (change)="fileInputChange()">
+                    </form>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="write.tag" name="tag" placeholder="文章标签，逗号分隔，最多5个，超过自动截断。" required>
+                </div>
+                <button type="submit" class="btn btn-success"  [disabled]="!form.form.valid">提交</button>
+            </form>
+        </div>
+    </div>
+</div>

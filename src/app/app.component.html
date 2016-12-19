@@ -1,0 +1,67 @@
+<div class="navbar navbar-fixed-top main-nav" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+        <button #button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" (click)="toggle(button)">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a routerLink="/" class="navbar-brand">
+            Angular2中文社区
+        </a>
+    </div>
+    <!-- aria-expanded:表示展开状态；true:展开；false：不展开 -->
+    <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li class="dropdown active">
+          <a routerLink="/">动态</a>
+        </li>
+        <li class="dropdown">
+          <a href="http://www.angular.cn/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">官方文档</a>
+        </li>
+        <li class="dropdown">
+          <a href="" data-toggle="dropdown" class="dropdown-toggle" target="_blank">Github</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="login">登录</a>
+        </li>
+        <li>
+          <a routerLink="register">注册</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="user">欢迎你：华仔</a>
+        </li>
+        <li>
+          <a routerLink="manage">管理后台</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" (click)="logout()">退出</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- 提示信息显示 -->
+<div class="message">
+    <app-prompt [message]="toast.message"></app-prompt>
+</div>
+
+<div class="footer bs-footer">
+  <div class="container">
+    <div class="row text-center">
+      <p>Powered by <a href="" target="_blank">Github</a></p>
+      <p>湘ICP备12011607号</p>
+    </div>
+  </div>
+</div>

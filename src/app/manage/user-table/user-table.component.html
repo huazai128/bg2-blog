@@ -1,0 +1,48 @@
+<div class="user-table-container">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input class="form-control" type="text" [(ngModel)]="userText" name="userText" placeholder="用户名，昵称">
+                    <span class="input-group-btn">
+                        <button class="button" (click)="searchUser()" class="btn btn-success"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- 管理员身份修改 -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="user-items-container">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>注册</th>
+                        <th>最后登录时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>华仔</td>
+                        <td>2016-12-12 10:10:10</td>
+                        <td>2016-12-12 10:10:10</td>
+                        <td>
+                            <a (click)="disable()" class="btn btn-sm btn-danger">禁止</a>
+                            <a (click)="changepwd" class="btn btn-sm btn-primary">重置密码</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
+            </div>
+        </div>
+    </div>
+</div>
